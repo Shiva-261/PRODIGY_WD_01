@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        nav { position: fixed; top: 0; width: 100%; background-color: #333; transition: background-color 0.3s; z-index: 1000; }
+        nav ul { list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: space-around; }
+        nav ul li { padding: 15px; }
+        nav a { color: white; text-decoration: none; }
+        nav a:hover { color: #ff6347; }
+        .scrolled { background-color: #444; }
+        section { padding-top: 60px; height: 100vh; }
+        section:nth-child(odd) { background-color: #f4f4f4; }
+        section:nth-child(even) { background-color: #e2e2e2; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+    </ul>
+</nav>
+
+<section id="section1">
+    <h1>Section 1</h1>
+    <p>This is section 1.</p>
+</section>
+<section id="section2">
+    <h1>Section 2</h1>
+    <p>This is section 2.</p>
+</section>
+<section id="section3">
+    <h1>Section 3</h1>
+    <p>This is section 3.</p>
+</section>
+
+<script>
+    const nav = document.querySelector('nav');
+    window.onscroll = () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    };
+</script>
+
+</body>
+</html>
